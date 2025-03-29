@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>감옥탈출</title>
+    <link rel="stylesheet" href="game1Style.css" />
+    <script src="https://unpkg.com/@ruffle-rs/ruffle"></script>
+</head>
+<body>
+    <div class="backBut" onclick="backToApi()">Back</div>
+    <script>
+        function backToApi() {
+            window.location.href = "api2.html";
+        }
+    </script>
+
+    <h2>감옥탈출</h2>
+
+    <div class="game-container">
+        <div class="screen" id="myDiv">
+            <object type="application/x-shockwave-flash" 
+                    data="https://cssice.github.io/FlashGame/escapeprison-remaster-m-2 (4).swf" 
+                    width="100%" height="100%">
+                <param name="movie" value="game.swf">
+                <param name="allowFullScreen" value="true">
+                <param name="allowScriptAccess" value="always">
+            </object>
+        </div>
+    </div>
+
+    <label for="sizeInput">크기</label>
+    <input type="text" id="sizeInput" placeholder="예: 300 x 300"/>
+    <button onclick="changeSize()">크기 변경</button>
+
+    <script>
+        function updateDivSize() {
+          const div = document.getElementById('myDiv');
+          const width = div.offsetWidth;
+          const height = div.offsetHeight;
+          document.getElementById('sizeInput').value = `${width} x ${height}`;
+        }
+    
+        function changeSize() {
+          const input = document.getElementById('sizeInput').value;
+          const sizeArray = input.split('x').map(item => item.trim());
+    
+          if (sizeArray.length === 2) {
+            const newWidth = parseInt(sizeArray[0], 10);
+            const newHeight = parseInt(sizeArray[1], 10);
+    
+            if (!isNaN(newWidth) && !isNaN(newHeight)) {
+              const div = document.getElementById('myDiv');
+              div.style.width = `${newWidth}px`;
+              div.style.height = `${newHeight}px`;
+              updateDivSize();
+            } else {
+              alert('올바른 크기를 입력하세요. (예: 300 x 300)');
+            }
+          } else {
+            alert('올바른 형식으로 입력하세요. (예: 300 x 300)');
+          }
+        }
+    
+        window.onload = updateDivSize;
+    </script>
+</body>
+</html>

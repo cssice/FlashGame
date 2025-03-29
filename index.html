@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>수크레 백과사전</title>
+    <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+    <div class="header">
+        <div class="logo" onclick="gohome()">Sucre Dictionary</div>
+        <script>
+                function gohome() {
+                    window.location.href = "index.html";
+                }
+        </script>
+        
+        <div class="menu">
+            <div class="menu-box">자료실</div>
+            <div class="menu-box">업데이트</div>
+            <div class="menu-box">블로그</div>
+            <div class="menu-box" onclick="redirectToPage()">API</div>
+            <div class="menu-box">FAQ</div>
+        </div>
+    </div>
+
+    <script>
+        function redirectToPage() {
+            window.location.href = "api1.html";
+        }
+    </script>
+
+    <div class="main">
+        <div class="sentence">
+            <p class="a1">모든 지식의 집합체,</p>
+            <p class="a1">수크레 백과사전</p>
+        </div>
+        <div class="buts">
+            <div class="but a1" id="download">Download</div>
+            <div class="but a1" id="more">더 알아보기</div>
+        </div>
+        <div class="rect a1">Sucre Dictionary</div>
+        <div class="text">
+            <p class="paragraph a1">
+                <b>세상의 모든 지식</b>을 한곳에 모아 체계적으로 정리하고,
+                깊이 있는 분석과 폭넓은 시각을 더한다면 어떤 모습일까요? 수크레 백과사전은 단순한 정보의 집합이 아닙니다.
+                지식을 사랑하는 사람들이 함께 만들어 가는
+                방대한 지식의 보고이며,
+                단순한 사실을 나열하는 것이 아니라,
+                각 주제에 담긴 역사적 배경과 맥락을 분석하고,
+                최신 연구 동향을 반영하며,
+                다양한 관점에서 조망하는 것을 목표로 합니다.
+                과학, 역사, 철학, 예술, 기술 등 모든 학문 분야를 아우르며, 단순한 검색을 넘어 보다 깊이 있는 탐구를
+                하실 수 있도록 돕겠습니다.
+            </p>
+            <p class="paragraph a1" id="rightPara">
+                수크레 백과사전의 모든 콘텐츠는
+                <b>철저한 연구와 검증</b>을 거쳐 작성됩니다.
+                최신 연구 자료를 반영하고,
+                다양한 시각에서 균형 잡힌 정보를 제공하며,
+                독자 여러분께서 신뢰할 수 있도록
+                철저한 출처 관리와 교차 검증을 수행합니다.
+                저희는 단순한 지식 전달자가 아니라,
+                지적 탐험을 돕는 안내자가 되기를 희망합니다.
+                누구나 더 나은 세상을 이해하고
+                깊이 있는 사고를 할 수 있도록 돕기 위해,
+                최고의 정보를 제공하는 것에
+                자부심을 갖고 있습니다.
+            </p>
+            <p class="paragraph a1">
+                수크레 백과사전은 끝없는 지식 탐험의 시작입니다.
+                우리는 지식의 끝없는 확장을 꿈꿉니다.
+                단순한 참고서가 아니라,
+                독자 여러분의 지적 호기심을 자극하고
+                성장시킬 동반자가 되고자 합니다.
+                과거를 배우고 현재를 분석하며
+                미래를 내다보는 지식의 여정에
+                함께해 주시길 바랍니다.
+                <b>세상은 넓고, 배울 것은 무궁무진합니다.</b>
+                저희는 지식에 대한 열정이 있는 한,
+                끝없는 탐험을 계속해 나가겠습니다.
+            </p>
+        </div>
+    </div>
+
+    <script>
+        let observer = new IntersectionObserver((entries) => {
+            let delay = 0;
+    
+            entries.forEach((entry, index) => {
+                if (entry.isIntersecting) {
+                    setTimeout(() => {
+                        entry.target.style.opacity = 1;
+                    }, delay);
+    
+                    delay += 250;
+                }
+            });
+        });
+    
+        let divs = document.querySelectorAll('.a1');
+        divs.forEach(div => observer.observe(div));
+    </script>
+</body>
+</html>

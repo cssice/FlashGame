@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>API</title>
+    <link rel="stylesheet" href="api1Style.css" />
+</head>
+<body>
+    <div class="old-design">
+        <div class="header">
+            <div class="logo" onclick="gohome()">Sucre Dictionary</div>
+            <script>
+                function gohome() {
+                    window.location.href = "index.html";
+                }
+            </script>
+
+            <div class="menu">
+                <div class="menu-box">자료실</div>
+                <div class="menu-box">업데이트</div>
+                <div class="menu-box">블로그</div>
+                <div class="menu-box" id="API">API</div>
+                <div class="menu-box">FAQ</div>
+            </div>
+        </div>
+
+        <div id="oldDesign">
+            <h1>검색어 입력</h1>
+            <p>검색할 정보의 키워드나 내용을 입력하세요.</p>
+            <input type="text" id="codeInput" placeholder="키워드를 입력하세요">
+            <button onclick="checkCode()">확인</button>
+        </div>
+    </div>
+
+
+
+    <script>
+        function checkCode() {
+            let input = document.getElementById('codeInput').value;
+            let correctCode = "레크수";
+
+            if (input === correctCode) {
+                window.location.href = "api2.html";
+            } else {
+                alert("잘못된 검색어입니다.");
+            }
+        }
+    </script>
+
+</body>
+</html>

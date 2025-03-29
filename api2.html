@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>API</title>
+    <link rel="stylesheet" href="api2Style.css" />
+</head>
+<body>
+    <div class="backBut" onclick="backToApi()">Back</div>
+        <script>
+            function backToApi() {
+                window.location.href = "api1.html";
+            }
+        </script>
+   
+    <div class="new-design" id="newDesign">
+        <h1>레크수 플래시 게임 모음</h1>
+        <p>음성 크기에 주의하세요.</p>
+        <div class="flash-game-list">
+            <div class="grid-box" onclick="MoveToGame1()">감옥탈출</div>
+            <div class="grid-box" onclick="MoveToGame2()">팬시팬츠1</div>
+            <div class="grid-box">3</div>
+            <div class="grid-box">4</div>
+            <div class="grid-box">5</div>
+            <div class="grid-box">6</div>
+            <div class="grid-box">7</div>
+            <div class="grid-box">8</div>
+            <div class="grid-box">9</div>
+            <div class="grid-box">10</div>
+            <div class="grid-box">11</div>
+            <div class="grid-box">12</div>
+            <div class="grid-box">13</div>
+            <div class="grid-box">14</div>
+            <div class="grid-box">15</div>
+            <div class="grid-box">16</div>
+            <script>
+                function MoveToGame1() {
+                    window.location.href = "game1.html";
+                }
+                function MoveToGame2() {
+                    window.location.href = "game2.html";
+                }
+            </script>
+        </div>
+    </div>
+</body>
+</html>
